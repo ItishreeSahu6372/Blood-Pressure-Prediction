@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypertension Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🩺 Hypertension Prediction Report</h1>
+
+        <!-- Patient Details -->
+        <div class="card">
+            <h2>Patient Details</h2>
+            <table>
+                {% for key, value in details.items() %}
+                <tr>
+                    <th>{{ key }}</th>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- Prediction Result -->
+        <div class="card highlight">
+            <h2>Prediction Result</h2>
+            <p class="result">{{ prediction }}</p>
+        </div>
+
+        <!-- Advice Section -->
+        <div class="card">
+            <h2>Health Advice</h2>
+            {% if prediction == "NORMAL" %}
+                <p>✅ Your blood pressure is normal. Maintain a healthy lifestyle and get regular check-ups.</p>
+            {% elif "Stage-1" in prediction %}
+                <p>⚠️ Mild hypertension detected. Consider reducing salt intake, exercising, and monitoring BP regularly.</p>
+            {% elif "Stage-2" in prediction %}
+                <p>⚠️ Moderate hypertension detected. Medical consultation is strongly recommended.</p>
+            {% else %}
+                <p>🚨 Hypertensive crisis detected! Please seek immediate medical attention.</p>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('home') }}" class="btn">🔙 Back to Home</a>
+    </div>
+</body>
+</html>

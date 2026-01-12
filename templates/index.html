@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloodpressure Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bloodpressure Prediction</h1>
+        <form action="/predict" method="POST">
+            <!-- Gender -->
+            <label for="Gender">Gender</label>
+            <select name="Gender" id="Gender" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <!-- Age -->
+            <label for="Age">Age</label>
+            <select name="Age" id="Age" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">18-34</option>
+                <option value="1">35-50</option>
+                <option value="2">51-64</option>
+                <option value="3">65+</option>
+            </select>
+
+            <!-- History -->
+            <label for="History">History</label>
+            <select name="History" id="History" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <!-- Patient -->
+            <label for="Patient">Patient</label>
+            <select name="Patient" id="Patient" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <!-- TakeMedication -->
+            <label for="TakeMedication">Take Medication</label>
+            <select name="TakeMedication" id="TakeMedication" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+                
+            </select>
+
+            <!-- Severity -->
+            <label for="Severity">Severity</label>
+            <select name="Severity" id="Severity" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">Mild</option>
+                <option value="2">Sever</option>
+                <option value="1">Moderate</option>
+            </select>
+
+            <!-- BreathShortness -->
+            <label for="BreathShortness">Breath Shortness</label>
+            <select name="BreathShortness" id="BreathShortness" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <!-- VisualChanges -->
+            <label for="VisualChanges">Visual Changes</label>
+            <select name="VisualChanges" id="VisualChanges" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <!-- NoseBleeding -->
+            <label for="NoseBleeding">Nose Bleeding</label>
+            <select name="NoseBleeding" id="NoseBleeding" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+                
+            </select>
+
+            <!-- Whendiagnoused -->
+            <label for="Whendiagnoused">When Diagnosed</label>
+            <select name="Whendiagnoused" id="Whendiagnoused" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">&lt;1 Year</option>
+                <option value="0">1-5 Years</option>
+                <option value="2">&gt;5 Years</option>
+            </select>
+
+            <!-- Systolic -->
+            <label for="Systolic">Systolic</label>
+            <select name="Systolic" id="Systolic" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">111-120</option>
+                <option value="2">121-130</option>
+                <option value="3">130+</option>
+                <option value="0">100+</option>
+            </select>
+
+            <!-- Diastolic -->
+            <label for="Diastolic">Diastolic</label>
+            <select name="Diastolic" id="Diastolic" required>
+                <option value="" disabled selected>Select</option>
+                <option value="3">81-90</option>
+                <option value="4">91-100</option>
+                <option value="0">100+</option>
+                <option value="1">130+</option>
+                <option value="2">70-80</option>
+            </select>
+
+            <!-- ControlledDiet -->
+            <label for="ControlledDiet">Controlled Diet</label>
+            <select name="ControlledDiet" id="ControlledDiet" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
+

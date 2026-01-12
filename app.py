@@ -7,7 +7,10 @@ from flask import Flask, request, render_template
 app = Flask(__name__, static_folder="static")
 
 # Load the trained model
-model = pickle.load(open(r"C:\Users\micky\smtz\flask\model.pkl", "rb"))
+model_path = 'model.pkl'
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
+#model = pickle.load(open(r"C:\Users\micky\smtz\flask\model.pkl", "rb"))
 
 @app.route('/')
 def home():
